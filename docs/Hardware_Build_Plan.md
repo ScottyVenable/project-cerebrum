@@ -47,9 +47,18 @@ To bypass hair impedance and eliminate 50/60Hz noise at the source.
 *   **Design:** 3D-printable lattice (PLA/PETG) with TPU flexible ribs.
 *   **Electrode Sockets:** M12 threaded inserts for "Screw-in" active electrodes, allowing for individual pressure adjustment.
 
-## 5. Firmware & Data Flow
-The ESP32-S3 firmware will:
-1. Initialize ADS1299 in "Continuous Read" mode.
-2. Trigger an Interrupt on `DRDY` Low.
-3. Read 24-bit samples for 8 channels.
-4. Package into LSL (Lab Streaming Layer) packets and broadcast over 5GHz Wi-Fi to the Pi 5.
+## 6. Bill of Materials (BOM)
+To ensure research-grade results, we recommend the following components:
+
+| Item | Specification | Approx. Cost |
+| :--- | :--- | :--- |
+| **ADC IC** | TI ADS1299IPAG (64-TQFP) | $75.00 |
+| **MCU** | ESP32-S3-WROOM-1-N16R8 | $7.00 |
+| **Op-Amps** | OPA333 (for active electrodes, 8x) | $12.00 |
+| **LDO** | LT1763 (Ultra-low noise, 3.3V) | $5.00 |
+| **PCB** | Custom 2-layer FR4 | $25.00 |
+| **Electrodes** | Gold-plated spring pins (Pogo pins) | $10.00 |
+| **Battery** | 3.7V 1200mAh LiPo | $10.00 |
+| **Total** | | **~$144.00** |
+
+## 7. Safety & Isolation Protocols
