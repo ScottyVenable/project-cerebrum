@@ -34,7 +34,7 @@ def EEGNet(nb_classes, Chans=8, Samples=250, dropoutRate=0.5, kernLength=64, F1=
 
     return Model(inputs=input1, outputs=softmax)
 
-def export_to_tflite(model, filename="/root/Coding/project-cerebrum/ai_models/eegnet_quantized.tflite"):
+def export_to_tflite(model, filename="/root/Coding/projects/project-cerebrum/ai_models/eegnet_quantized.tflite"):
     """
     Converts and saves the Keras model to a quantized TFLite format for Raspberry Pi.
     """

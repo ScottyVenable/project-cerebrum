@@ -39,12 +39,12 @@ def train_cerebrum_model():
                         verbose=1)
     
     # Save the final weights
-    model.save('/root/Coding/project-cerebrum/ai_models/cerebrum_v1.h5')
+    model.save('/root/Coding/projects/project-cerebrum/ai_models/cerebrum_v1.h5')
     print("[AI] Training complete. Model saved.")
     
     # Export for Raspberry Pi optimization
     from model import export_to_tflite
-    export_to_tflite(model, "/root/Coding/project-cerebrum/ai_models/eegnet_quantized.tflite")
+    export_to_tflite(model, "/root/Coding/projects/project-cerebrum/ai_models/eegnet_quantized.tflite")
 
 if __name__ == "__main__":
     train_cerebrum_model()

@@ -11,7 +11,7 @@ def run_test():
     sender_proc = subprocess.Popen(['python3', 'bci_interface/sender.py'], 
                                    stdout=subprocess.PIPE, 
                                    stderr=subprocess.PIPE,
-                                   cwd='/root/Coding/project-cerebrum')
+                                   cwd='/root/Coding/projects/project-cerebrum')
     
     time.sleep(3) # Give LSL time to resolve
     
@@ -20,7 +20,7 @@ def run_test():
     hub_proc = subprocess.Popen(['python3', 'server/hub.py'], 
                                  stdout=subprocess.PIPE, 
                                  stderr=subprocess.PIPE,
-                                 cwd='/root/Coding/project-cerebrum')
+                                 cwd='/root/Coding/projects/project-cerebrum')
     
     time.sleep(10) # Run for 10 seconds to collect logs
     
