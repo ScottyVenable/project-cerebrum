@@ -1,0 +1,30 @@
+name: Bug Report
+about: Create a report to help us improve.
+title: "[BUG] "
+labels: bug
+assignees: ''
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a bug! Please provide as much detail as possible.
+  - type: input
+    id: hardware
+    attributes:
+      label: Hardware Setup
+      placeholder: e.g., Raspberry Pi 5, ESP32-S3, ADS1299
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      placeholder: Describe the bug in detail.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs/Error Messages
+      placeholder: Paste your logs or error messages here.

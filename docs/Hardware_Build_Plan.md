@@ -3,6 +3,18 @@
 ## 1. Electronic Architecture (The Acquisition Board)
 The heart of the system is the **TI ADS1299** 24-bit ADC, interfaced with an **ESP32-S3** for wireless LSL streaming.
 
+```mermaid
+graph TD
+    A[Scalp/Electrodes] --> B[Active Buffers OPA333]
+    B --> C[ADS1299 24-bit ADC]
+    C -- SPI --> D[ESP32-S3 MCU]
+    D -- WiFi/LSL --> E[Raspberry Pi 5 Hub]
+    E -- Inference --> F[Action/Control]
+    G[Battery Power] --> D
+    G --> C
+    C -- Feedback --> H[Bias/DRL Electrode]
+```
+
 ### Wiring Diagram (ESP32-S3 to ADS1299)
 | ADS1299 Pin | ESP32-S3 Pin | Function |
 | :--- | :--- | :--- |

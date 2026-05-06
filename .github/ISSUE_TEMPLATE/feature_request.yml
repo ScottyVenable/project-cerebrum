@@ -1,0 +1,28 @@
+name: Feature Request
+about: Suggest an idea for Project Cerebrum.
+title: "[FEATURE] "
+labels: enhancement
+assignees: ''
+
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem is this feature solving?
+      placeholder: A clear description of the problem or limitation.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Describe the proposed solution
+      placeholder: Detailed technical rationale for the change.
+    validations:
+      required: true
+  - type: textarea
+    id: sovereignty
+    attributes:
+      label: Neural Sovereignty Check
+      placeholder: How does this feature maintain local-first processing?
+    validations:
+      required: true
