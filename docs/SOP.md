@@ -16,7 +16,11 @@
 2.  **Start Hub:** Execute `server/hub.py` to pull data from LSL and run real-time inference.
 3.  **Thresholding:** Adjust confidence thresholds (Default: 0.7) based on user signal quality.
 
-## SOP-004: Ethical Data Management
-1.  **Session Logging:** Only store preprocessed features or "Intent Markers," never raw EEG data unless explicitly debugging.
-2.  **Encryption:** All stored neural snapshots must be encrypted using AES-256.
-3.  **Purge Policy:** Delete temporary session files after 24 hours.
+## SOP-005: Project Management & Milestone Tracking
+1.  **Issue Management:** All development tasks must be tracked as GitHub Issues with appropriate labels (`hardware`, `ai`, `software`).
+2.  **Sub-tasks:** Large issues must contain a task list (checkboxes) to track granular progress.
+3.  **Milestones:** All issues must be assigned to a specific Milestone:
+    *   **M1: Hardware Foundation:** Focus on ADC and PCB reliability.
+    *   **M2: Data & AI Alpha:** Focus on dataset quality and model accuracy.
+    *   **M3: System Integration:** Focus on real-time feedback and control.
+4.  **Syncing:** Use `./bin/cerebrum.sh` for routine Git operations to ensure local and remote states are consistent.
