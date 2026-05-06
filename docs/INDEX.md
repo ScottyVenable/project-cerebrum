@@ -18,6 +18,7 @@ Welcome to the central documentation hub. Navigate through the project using the
 - [Neural Sovereignty](research/neural_sovereignty.md): The ethics of local-first BCI.
 - [SMR Decoding Architectures](research/smr_decoding_architectures.md): Deep learning for motor imagery.
 - [Low-Latency Networking](research/low_latency_networking.md): Optimizing WiFi-EEG.
+- [Symbiotic Learning](research/symbiotic_learning.md): Neurofeedback and plasticity.
 
 ## Project Management
 - [Contributing](../CONTRIBUTING.md): How to get involved.
