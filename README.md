@@ -11,16 +11,16 @@
 
 ---
 
-## 🧠 Vision
+## Vision
 **Project Cerebrum** is the flagship initiative of **Fathom**, a tech subsidiary of Cadential Studios. We are building a non-invasive, high-fidelity EEG headset from scratch, designed to empower users with direct neural-to-digital control without compromising privacy or financial accessibility.
 
-## 🚀 Key Features
+## Key Features
 - **Custom Acquisition:** 24-bit resolution via TI ADS1299 for research-grade signal quality.
 - **Edge Processing:** Real-time EEG decoding on Raspberry Pi 5 using optimized EEGNet architectures.
 - **Active Shielding:** Custom active-dry electrodes to eliminate noise and cable artifacts.
 - **Local-First Ethics:** Your neural data never leaves your device. Period.
 
-## 📂 Repository Structure
+## Repository Structure
 ```text
 project-cerebrum/
 ├── ai_models/        # EEGNet architecture & TFLite export
@@ -33,10 +33,10 @@ project-cerebrum/
 └── tests/            # Automated pipeline validation
 ```
 
-## 🛠️ Getting Started
+## Getting Started
 Check out the [Development Guide](docs/DEVELOPMENT.md) and [Hardware Build Plan](docs/Hardware_Build_Plan.md) to begin building your own prototype.
 
-## ⚖️ Ethics & Privacy
+## Ethics & Privacy
 Fathom stands for **Neural-Self Sovereignty**. Read our full [Ethical Framework](docs/Fathom_Architecture.md) to understand how we protect the sanctuary of your mind.
 
 ---
