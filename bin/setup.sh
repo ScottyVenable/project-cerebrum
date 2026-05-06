@@ -1,29 +1,28 @@
 #!/bin/bash
 
 # Project Cerebrum: Automated Setup Script
-# Use this on a clean Raspberry Pi 5 installation.
+# Handles independent installation of all system and python dependencies.
 
-echo "--- Project Cerebrum: System Setup ---"
+echo -e "\033[0;35m--- Project Cerebrum: Dependency Installation ---\033[0m"
 
 # 1. System Dependencies
-echo "[1/4] Installing system dependencies..."
-sudo apt update
-sudo apt install -y cmake build-essential liblsl-dev python3-pip python3-venv
+echo -e "\033[0;36m[1/3] Installing system-level dependencies (requires sudo)...\033[0m"
+sudo apt-get update
+sudo apt-get install -y cmake build-essential liblsl-dev python3-pip python3-venv python3-tk libqt5gui5
 
-# 2. Virtual Environment
-echo "[2/4] Setting up Python environment..."
-python3 -m venv venv
+# 2. Python Environment
+echo -e "\033[0;36m[2/3] Setting up Python virtual environment...\033[0m"
+cd "$(dirname "$0")/.." || exit
+if [ ! -d "venv" ]; then
+    python3 -m venv venv
+    echo "Virtual environment created."
+fi
 source venv/bin/activate
 
 # 3. Python Packages
-echo "[3/4] Installing Python requirements..."
+echo -e "\033[0;36m[3/3] Installing/Updating Python packages...\033[0m"
 pip install --upgrade pip
 pip install -r requirements.txt
 
-# 4. Final Verification
-echo "[4/4] Verifying installation..."
-python3 -c "import pylsl; print('LSL Version:', pylsl.library_version())"
-python3 -c "import numpy; print('Numpy Version:', numpy.__version__)"
-
-echo "--- Setup Complete ---"
-echo "Run 'source venv/bin/activate' to start."
+echo -e "\033[0;32m--- Installation Complete ---\033[0m"
+echo "You can now run 'cerebrum' to start the program."

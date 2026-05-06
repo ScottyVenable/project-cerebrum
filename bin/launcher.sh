@@ -28,8 +28,9 @@ main_menu() {
     echo -e "4) ${CYAN}OFFLINE ANALYSIS${NC} (MNE/CSP)"
     echo -e "5) ${VIOLET}SYSTEM MONITOR${NC} (Neural Ledger)"
     echo -e "6) ${VIOLET}CONFIGURATION${NC} (Settings)"
-    echo -e "7) ${RED}VIEW LOGS${NC}"
-    echo -e "8) ${RED}DEBUG MODE${NC} (LSL Test)"
+    echo -e "7) ${GREEN}INSTALL DEPENDENCIES${NC}"
+    echo -e "8) ${RED}VIEW LOGS${NC}"
+    echo -e "9) ${RED}DEBUG MODE${NC} (LSL Test)"
     echo -e "q) EXIT"
     echo -e "${VIOLET}--------------------------------------------------${NC}"
     read -p "Select an operation: " choice
@@ -41,8 +42,9 @@ main_menu() {
         4) read -p "Enter XDF path: " path; python3 ai_models/offline_analysis.py "$path" ;;
         5) python3 -c "import sqlite3; conn=sqlite3.connect('docs/research/neural_ledger.db'); c=conn.cursor(); c.execute('SELECT * FROM sessions ORDER BY id DESC LIMIT 5'); print('\nRecent Sessions:'); [print(r) for r in c.fetchall()]; conn.close()" ;;
         6) nano config/settings.json ;;
-        7) tail -n 50 /root/.bridge.log ;;
-        8) python3 bci_interface/sender.py & sleep 2; python3 -c "from pylsl import resolve_stream; print('LSL Streams:', resolve_stream())"; pkill -f sender.py ;;
+        7) ./bin/setup.sh ;;
+        8) tail -n 50 /root/.bridge.log ;;
+        9) python3 bci_interface/sender.py & sleep 2; python3 -c "from pylsl import resolve_stream; print('LSL Streams:', resolve_stream())"; pkill -f sender.py ;;
         q) exit 0 ;;
         *) echo "Invalid choice"; sleep 1; main_menu ;;
     esac
