@@ -10,6 +10,9 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m'
 
+# Change to the directory where the script is located, then go up one level to project root
+cd "$(dirname "$0")/.." || exit
+
 show_header() {
     clear
     echo -e "${VIOLET}==================================================${NC}"
